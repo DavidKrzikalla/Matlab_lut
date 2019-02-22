@@ -7,19 +7,19 @@
 %M - number of divisions of time interval and trapezoids
 %N - number of coefficients b_N
 
-function plot_approx(f, N, M) 
+function plot_approx(f, N, M, filename) 
     t=linspace(-pi, pi, M);
     [b_N]=integrate_coeffs(f, N, M);
     [S_N]=sinesum(t, b_N);
-
+   
     plot(t, f(t));
     hold on
     plot(t, S_N);    
-    print('filename', '-deps');
     xlabel('Time interval')
     ylabel('Function values')
     title('Comparison of original and approximation function')
     grid off
     legend({'Original function','Approximation function'},'Location','northwest')
+    print(filename, '-deps');
     hold off
 end
