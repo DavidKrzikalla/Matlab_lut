@@ -7,7 +7,7 @@
 %b - upper limit
 %eps - desired tolerance
 
-function [I, error]=adaptive_integration(f, a, b, eps)
+function adaptive_integration(f, a, b, eps)
 
     %setting of initial values
     array_error=zeros(1,30);
