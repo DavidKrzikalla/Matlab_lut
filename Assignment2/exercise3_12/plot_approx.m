@@ -20,6 +20,6 @@ function plot_approx(f, N, M, filename)
     title('Comparison of original and approximation function')
     grid off
     legend({'Original function','Approximation function'},'Location','northwest')
-    print(filename, '-deps');
+    print(filename, '-depsc');
     hold off
 end
