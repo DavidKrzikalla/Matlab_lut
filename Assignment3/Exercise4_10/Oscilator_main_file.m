@@ -11,23 +11,7 @@ x_0=2; % initial displacement [m]
 v_0=0; % initial velocity [m/s]
 
 [u_FE, v_FE, t] = osc_FE(omega, x_0, v_0);
-E_sum = osc_energy(u_FE, v_FE, omega, t, 'Forward Euler');
+osc_energy(u_FE, v_FE, omega, t, 'Forward Euler'); % plotting of energy using forward euler
 
-[u_BE, v_BE, t] = osc_BE(omega, x_0, v_0);
-E_sum = osc_energy(u_BE, v_BE, omega, t, 'Euler-Cromer');
-
-% figure %disp plot FE
-%     plot(t,u_FE,'--b')
-%     hold on
-%     plot(t,x_0*cos(omega*t),'--r')
-%     xlabel('Time t [s]')
-%     ylabel('disp')
-%     title('disp - FE')
-%     
-% figure % desp plor BE
-%     plot(t,u_BE,'--b')
-%     hold on
-%     plot(t,x_0*cos(omega*t),'--r')
-%     xlabel('Time t [s]')
-%     ylabel('disp')
-%     title('disp - BE')
+[u_EC, v_EC, t] = osc_EC(omega, x_0, v_0);
+osc_energy(u_EC, v_EC, omega, t, 'Euler-Cromer'); % plotting of energy using euler-cromer
