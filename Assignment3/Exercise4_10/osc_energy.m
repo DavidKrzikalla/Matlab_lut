@@ -7,7 +7,7 @@
 % omega - natural frequency
 % name - name of calculation method for plotting purposes
 
-function E_sum = osc_energy(u, v, omega, t, name)
+function osc_energy(u, v, omega, t, name)
 
     E_potential=0.5*omega^2*u.^2;
     E_kinetic=0.5*v.^2;
@@ -24,8 +24,8 @@ function E_sum = osc_energy(u, v, omega, t, name)
     hold on
     plot(t,E_kinetic,'--r')
     plot(t,E_sum,'-k')
-    xlabel('Time t [s]')
-    ylabel('Energy')
+    xlabel('Time [s]')
+    ylabel('Energy [J]')
     title(['Total Energy Time Development - ',name,'.'])
-    legend({'Potential Energy','Kinetic Energy','Total Energy'},'Location','northwest')
+    legend({'Potential Energy','Kinetic Energy','Total Energy'},'Location','southwest')
 end
