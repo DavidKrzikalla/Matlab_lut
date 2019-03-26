@@ -7,7 +7,7 @@ close all
 % Input data [SI units]:
 a=0.1;
 b=0.2;
-t=linspace(0,20,100);
+t=linspace(0,20,200);
 omega=1;
 
 phi=(pi/6)+omega.*t; %anti-clockwise rotation
@@ -26,8 +26,8 @@ F=@(u) [a*cos(phi(i))+b*cos(u(1))-u(2);
         a*sin(phi(i))-b*sin(u(1));
         -a*sin(phi(i))*omega-b*sin(u(1))*u(3)-u(4);
         a*cos(phi(i))*omega-b*cos(u(1))*u(3);
-        a*cos(phi(i))*omega^2-b*cos(u(1))*(u(3))^2-b*sin(u(1))*u(5)-u(6);
-        a*sin(phi(i))*omega^2+b*sin(u(1))*(u(3))^2-b*cos(u(1))*u(5)];
+        -a*cos(phi(i))*omega^2-b*cos(u(1))*(u(3))^2-b*sin(u(1))*u(5)-u(6);
+        -a*sin(phi(i))*omega^2+b*sin(u(1))*(u(3))^2-b*cos(u(1))*u(5)];
 
 % Jacobian:
 J=@(u) [-b*sin(u(1)) -1     0               0      0        0;
